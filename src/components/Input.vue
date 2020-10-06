@@ -1,9 +1,10 @@
 <template>
   <div>
+    <p class="h3 mb-3">Enter your URL here</p>
     <input
       v-model="currentURL"
       type="text"
-      class="form-control form-control-lg"
+      class="form-control form-control-lg shadow-sm rounded-pill"
       placeholder="Video URL"
     />
     <p
@@ -14,7 +15,7 @@
     </p>
     <div class="text-center">
       <button
-        class="btn btn-lg btn-success mt-3 mx-auto"
+        class="animated-button btn btn-lg btn-success mt-3 mx-auto shadow"
         @click="downloadVideo"
         :disabled="!isValidURL"
       >
@@ -23,7 +24,7 @@
       </button>
       <br />
       <button
-        class="btn btn-primary mt-3"
+        class="animated-button btn btn-primary mt-3 shadow"
         @click="downloadAudio"
         :disabled="!isValidURL"
       >
@@ -56,3 +57,9 @@ export default {
   },
 };
 </script>
+<style>
+.animated-button:enabled:hover, .animated-button:enabled:focus {
+  -webkit-animation: pulse 1s;
+  animation: pulse 1s;
+}
+</style>
