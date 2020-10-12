@@ -90,10 +90,16 @@ export default {
   },
   methods: {
     downloadVideo() {
-      downloadVideo(this.currentURL);
+      downloadVideo(this.currentURL, {
+        embedThumbnail: this.embedThumbnail,
+        removeExtention: this.removeExtention,
+      });
     },
     downloadAudio() {
-      downloadAudio(this.currentURL);
+      downloadAudio(this.currentURL, {
+        embedThumbnail: this.embedThumbnail,
+        removeExtention: this.removeExtention,
+      });
     },
   },
 };
