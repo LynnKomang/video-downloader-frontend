@@ -34,7 +34,7 @@
     </div>
 
     <button
-      class="btn btn-secondary mb-4"
+      class="btn btn-outline-secondary btn-sm mb-4 mt-5"
       type="button"
       data-toggle="collapse"
       data-target="#advancedOptions"
@@ -42,29 +42,30 @@
       aria-controls="collapseExample"
     >
       Advanced options
+      <i class="align-baseline fa fa-cog"></i>
     </button>
     <div class="collapse" id="advancedOptions">
       <div class="card card-body">
-        <div class="form-check">
+        <div class="custom-control custom-checkbox">
           <input
             v-model="embedThumbnail"
             type="checkbox"
-            class="form-check-input"
+            class="custom-control-input"
             id="embedThumbnail"
           />
-          <label class="form-check-label" for="embedThumbnail"
+          <label class="custom-control-label" for="embedThumbnail"
             >Embed thumbnail</label
           >
         </div>
 
-        <div class="form-check">
+        <div class="custom-control custom-checkbox">
           <input
             v-model="removeExtention"
             type="checkbox"
-            class="form-check-input"
+            class="custom-control-input"
             id="removeExtention"
           />
-          <label class="form-check-label" for="removeExtention"
+          <label class="custom-control-label" for="removeExtention"
             >Remove extention</label
           >
         </div>
