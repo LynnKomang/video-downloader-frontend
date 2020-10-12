@@ -1,4 +1,4 @@
-const address = `https://lynn-komang-video-downloader.herokuapp.com`;
+const address = process.env.ADDRESS;
 
 export const downloadVideo = (url) => {
   window.open(`${address}/download/video?url=${url}`, '_blank');
