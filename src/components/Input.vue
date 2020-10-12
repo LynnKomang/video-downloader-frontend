@@ -4,7 +4,7 @@
     <input
       v-model="currentURL"
       type="text"
-      class="form-control form-control-lg shadow-sm rounded-pill"
+      class="form-control form-control-lg shadow rounded-pill"
       placeholder="Video URL"
     />
     <p
@@ -32,6 +32,44 @@
         <i class="align-baseline fa fa-music ml-1"></i>
       </button>
     </div>
+
+    <button
+      class="btn btn-secondary mb-4"
+      type="button"
+      data-toggle="collapse"
+      data-target="#advancedOptions"
+      aria-expanded="false"
+      aria-controls="collapseExample"
+    >
+      Advanced options
+    </button>
+    <div class="collapse" id="advancedOptions">
+      <div class="card card-body">
+        <div class="form-check">
+          <input
+            v-model="embedThumbnail"
+            type="checkbox"
+            class="form-check-input"
+            id="embedThumbnail"
+          />
+          <label class="form-check-label" for="embedThumbnail"
+            >Embed thumbnail</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            v-model="removeExtention"
+            type="checkbox"
+            class="form-check-input"
+            id="removeExtention"
+          />
+          <label class="form-check-label" for="removeExtention"
+            >Remove extention</label
+          >
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -41,6 +79,8 @@ import { downloadVideo, downloadAudio } from "../requests";
 export default {
   data: () => ({
     currentURL: "",
+    embedThumbnail: false,
+    removeExtention: false,
   }),
   computed: {
     isValidURL() {
@@ -58,7 +98,8 @@ export default {
 };
 </script>
 <style>
-.animated-button:enabled:hover, .animated-button:enabled:focus {
+.animated-button:enabled:hover,
+.animated-button:enabled:focus {
   -webkit-animation: pulse 1s;
   animation: pulse 1s;
 }
