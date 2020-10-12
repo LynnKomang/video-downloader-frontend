@@ -1,4 +1,4 @@
-const address = process.env.ADDRESS;
+const address = process.env.VUE_APP_ADDRESS;
 
 export const downloadVideo = (url, props) => {
   window.open(
