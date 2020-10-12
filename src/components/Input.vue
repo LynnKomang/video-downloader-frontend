@@ -48,18 +48,6 @@
       <div class="card card-body">
         <div class="custom-control custom-checkbox">
           <input
-            v-model="embedThumbnail"
-            type="checkbox"
-            class="custom-control-input"
-            id="embedThumbnail"
-          />
-          <label class="custom-control-label" for="embedThumbnail"
-            >Embed thumbnail</label
-          >
-        </div>
-
-        <div class="custom-control custom-checkbox">
-          <input
             v-model="removeExtention"
             type="checkbox"
             class="custom-control-input"
@@ -80,7 +68,6 @@ import { downloadVideo, downloadAudio } from "../requests";
 export default {
   data: () => ({
     currentURL: "",
-    embedThumbnail: false,
     removeExtention: false,
   }),
   computed: {
@@ -91,13 +78,11 @@ export default {
   methods: {
     downloadVideo() {
       downloadVideo(this.currentURL, {
-        embedThumbnail: this.embedThumbnail,
         removeExtention: this.removeExtention,
       });
     },
     downloadAudio() {
       downloadAudio(this.currentURL, {
-        embedThumbnail: this.embedThumbnail,
         removeExtention: this.removeExtention,
       });
     },
